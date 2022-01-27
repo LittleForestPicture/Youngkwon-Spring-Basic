@@ -2,6 +2,7 @@ package com.helloJava.core.order;
 
 import com.helloJava.core.discount.DiscountPolicy;
 import com.helloJava.core.discount.FixDiscountPolicy;
+import com.helloJava.core.discount.RateDiscountPolicy;
 import com.helloJava.core.member.Member;
 import com.helloJava.core.member.MemberRepository;
 import com.helloJava.core.member.MemoryMemberRepository;
@@ -10,7 +11,9 @@ import com.helloJava.core.order.Order;
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private DiscountPolicy discountPolicy;
+//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+//    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
