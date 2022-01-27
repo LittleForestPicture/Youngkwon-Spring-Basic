@@ -1,15 +1,20 @@
-package com.helloJava.core.order;
+package com.helloJava.core;
 
 import com.helloJava.core.member.Grade;
 import com.helloJava.core.member.Member;
 import com.helloJava.core.member.MemberService;
 import com.helloJava.core.member.MemberServiceImpl;
+import com.helloJava.core.order.Order;
+import com.helloJava.core.order.OrderService;
+import com.helloJava.core.order.OrderServiceImpl;
 
 public class OrderApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
