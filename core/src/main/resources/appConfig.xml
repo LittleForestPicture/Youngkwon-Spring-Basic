@@ -15,5 +15,5 @@
     </bean>
 
     <bean id="discountPolicy" class="com.helloJava.core.discount.RateDiscountPolicy" />
-    
+
 </beans>
